@@ -544,12 +544,33 @@ a {
        max-width: 100%;
    }
 }
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+@media (max-width: 1024px) {
+   .bloc {
+       padding-left: 20px;
+       padding-right: 20px;
+   }
+   .bloc-tile-2.full-width-bloc .container,
+   .bloc-tile-3.full-width-bloc .container,
+   .bloc-tile-4.full-width-bloc .container,
+   .bloc.full-width-bloc {
+       padding-left: 0;
+       padding-right: 0;
+   }
+}
+@media (max-width: 992px) and (min-width: 768px) {
+   .navbar .nav {
+       max-width: 80%;
+   }
+   .nav-center.navbar .nav {
+       max-width: 100%;
+   }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
    .b-parallax {
        background-attachment: scroll;
    }
 }
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+@media only screen and (min-width: 1024px) and (max-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
    .b-parallax {
        background-attachment: scroll;
    }
@@ -566,25 +587,20 @@ a {
        overflow-x: hidden;
        position: relative;
    }
-   .bloc {
-       padding-left: constant(safe-area-inset-left);
-       padding-right: constant(safe-area-inset-right);
+   .bloc-group,
+   .bloc-group .bloc {
+       display: block;
+       width: 100%;
+   }
+   .bloc-fill-screen .fill-bloc-bottom-edge,
+   .bloc-fill-screen .fill-bloc-top-edge {
+       padding: 0 20px;
    }
 }
 @media (max-width: 767px) {
    .page-container {
        overflow-x: hidden;
        position: relative;
-   }
-   h1,
-   h2,
-   h3,
-   h4,
-   h5,
-   h6,
-   p {
-       padding-left: 10px !important;
-       padding-right: 10px !important;
    }
    .b-parallax {
        background-attachment: scroll;
@@ -603,6 +619,8 @@ a {
        transform: none;
        -webkit-transform: none;
        -ms-transform: none;
+       display: flex;
+       flex-direction: column;
    }
    .nav > li {
        margin-top: 0;
@@ -614,6 +632,14 @@ a {
    }
    .nav > li:hover {
        background: rgba(0, 0, 0, 0.08);
+   }
+   .dropdown .dropdown a .caret {
+       float: none;
+       margin: 5px 0 0 10px !important;
+       border: 4px solid #000;
+       border-bottom-color: transparent;
+       border-right-color: transparent;
+       border-left-color: transparent;
    }
    #hero-bloc .navbar .nav {
        background: rgba(0, 0, 0, 0.8);
@@ -638,11 +664,21 @@ a {
        max-height: 40px;
        width: auto;
    }
+   .nav-invert .navbar-header {
+       float: none;
+       width: 100%;
+   }
+   .nav-invert .navbar-toggle {
+       float: left;
+       margin-left: 10px;
+   }
    .bloc {
        padding-left: 0;
        padding-right: 0;
    }
-   .bloc-lg {
+   .bloc-lg,
+   .bloc-xl,
+   .bloc-xxl {
        padding: 40px 0;
    }
    .bloc-md,
@@ -650,8 +686,19 @@ a {
        padding-left: 0;
        padding-right: 0;
    }
+   .bloc-fill-screen .fill-bloc-bottom-edge,
+   .bloc-fill-screen .fill-bloc-top-edge,
+   .bloc-tile-2 .container,
+   .bloc-tile-3 .container,
+   .bloc-tile-4 .container {
+       padding-left: 0;
+       padding-right: 0;
+   }
    .a-block {
        padding: 0 10px;
+   }
+   .btn-dwn {
+       display: none;
    }
    .voffset {
        margin-top: 5px;
@@ -662,13 +709,77 @@ a {
    .voffset-lg {
        margin-top: 30px;
    }
+   .close-lightbox {
+       display: inline-block;
+   }
+   .blocsapp-device-iphone5 {
+       background-size: 216px 425px;
+       padding-top: 60px;
+       width: 216px;
+       height: 425px;
+   }
+   .blocsapp-device-iphone5 img {
+       width: 180px;
+       height: 320px;
+   }
+   .social {
+       width: 100%;
+   }
+   .bloc-mob-center-text {
+       text-align: center;
+   }
+   .bloc-lg {
+       padding: 0;
+   }
+   .row {
+       margin: 0;
+   }
+   .navbar {
+       padding: 0;
+   }
+   .black-background {
+       padding: 0;
+   }
+   blockquote {
+       margin-top: 40px;
+       padding: 0;
+   }
+   .bloc-sm {
+       padding: 0 50px 0 50px;
+   }
+   .bloc-md {
+       padding: 0;
+   }
+   .navbar-nav {
+       margin: 7.5px -15px 0 -15px;
+   }
+   .tight-width-whitespace {
+       padding-bottom: 15px;
+       padding-top: 15px;
+   }
+   .col-sm-12 img {
+       max-width: 100px;
+   }
+   .row-no-gutters {
+       padding-bottom: 20px;
+   }
+}
+@media all and (max-width: 576px) {
+   form {
+       padding: 25px 5px 25px 5px;
+   }
+   .col-sm-6 div {
+       padding: 0 5px 0 5px;
+   }
 }
 @media (max-width: 400px) {
    .bloc {
        padding-left: 0;
        padding-right: 0;
    }
-   .social-link {
-       font-size: 12px;
+
+   .social  {
+      text-align: center;
    }
+
 }
