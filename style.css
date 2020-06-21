@@ -779,7 +779,7 @@ a {
    }
 
    .social  {
-      text-align: center;
+      display: none;
    }
 
 }
